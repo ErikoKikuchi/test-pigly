@@ -9,31 +9,32 @@
     <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
     @yield('css')
-    @livewireStyles
 </head>
 
 <body>
     <header class="header">
         <div class="header-inner">
             <h1 class="header-logo">PiGLy</h1>
-            @if(Auth::check())
-                <div class="header-link">
-                    <div class="header-link__group">
-                        <img src="{{ asset('/src/public/設定アイコン.png') }}" alt="設定アイコン" class="header-link-icon" />
-                        <a href="{{ route('goal_setting') }}" class="header-link-item">目標体重設定</a>
-                    </div>
-                    <div class="header-link__group">
-                        <img src="{{asset('/src/public/ログアウト.png')" alt="ログアウトアイコン" class="header-link-icon">
-                        <a href="{{ route('login') }}" class="header-link-item">ログアウト</a>
-                    </div>
+            <div class="header-link">
+                @if(Auth::check())
+                <div class="header-link__group">
+                    <img src="{{ asset('設定アイコン.png') }}" alt=" " class="header-link-icon" />
+                    <a href="{{ route('goal_setting') }}" class="header-link-item">目標体重設定</a>
                 </div>
-            @endif
+                <div class="header-link__group">
+                    <form class="header-link-item" action="/logout" method="post">
+                        @csrf
+                        <img src="{{asset('2512730.png')}}" alt=" " class="header-link-icon">
+                        <button type="submit" class="logout-button">ログアウト</button>
+                    </form>
+                </div>
+                @endif
+            </div>
         </div>
     </header>
     <main>
         @yield('content')
     </main>
-    @livewireScripts
 </body>
 
 </html>

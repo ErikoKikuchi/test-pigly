@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class WeightLogs extends Model
+class WeightLog extends Model
 {
     use HasFactory;
 
@@ -17,5 +17,10 @@ class WeightLogs extends Model
         'exercise_time',
         'exercise_content',
     ];
+
+    public function getExerciseTimeShortAttribute()
+    {
+        return \Carbon\Carbon::parse($this->exercise_time)->format('H:i');
+    }
 
 }

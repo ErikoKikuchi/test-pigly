@@ -5,34 +5,16 @@
 @endsection
 
 @section('content')
-<div class="weight-management">
-    <div class="weight-goal">
-        <p class="weight-goal__label">目標体重</p>
-        <span class="weight-goal__contents">
-            {{$target_weight}} kg
-        </span>
+    <div class="goal-setting">
+        <h1 class="goal-setting__title">目標体重設定</h1>
+        <form class="goal-setting__form" action="/weight_logs/goal_setting" method="post">
+            @csrf
+            <div class="goal-setting__input-group">
+                <input type="number" id="target_weight" name="target_weight" class="goal-setting__input" placeholder="50.0" >kg
+            </div>
+            <div class="goal-setting__button-group">
+                <a class="back__button" href="/weight_logs">戻る</a>
+                <button type="submit" class="goal-setting__button">更新</button>
+            </div>
     </div>
-    <div class="weight-gap">
-        <p class="weight-gap__label">目標まで</p>
-        <span class="weight-gap__contents">
-            @if ($weight_difference > 0)
-                <p class="weight-gap--over">- {{ abs($weight_difference) }} </p>
-                <p class="weight-unit">kg</p>
-            @elseif ($weight_difference < 0)
-                <p class="weight-gap--under">+ {{ abs($weight_difference) }} </p>
-                <p class="weight-unit">kg</p>
-            @else
-                <p class="weight-gap--achieved">±0</p>
-                <p class="weight-unit">kg</p>
-            @endif
-        </span>
-    </div>
-    <div class="weight-record">
-        <div class ="weight-record__top">
-            <form class="search-form" action="" method="get"></form>
-        </div>
-
-</div>
-</div>
-
 @endsection

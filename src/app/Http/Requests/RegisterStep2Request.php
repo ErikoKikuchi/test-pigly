@@ -24,7 +24,7 @@ class RegisterStep2Request extends FormRequest
     public function rules()
     {
         return [
-            'user_id'=>['required','exists:users,id'],
+            'user_id'=>['required','integer','exists:users,id'],
             'date'=>['required','date'],
             'weight'=>['required','numeric','max:999.9','regex:/^\d{1,3}\.\d{1}$/'],
             'target_weight'=>['required','numeric', 'max:999.9','regex:/^\d{1,3}\.\d{1}$/'],

@@ -27,6 +27,8 @@
                 <div class="register-form__weight">
                     <label class="register-form__label" for="weight">現在の体重</label>
                     <input type="text" id="weight" name="weight" class="register-form__input" value="{{ old('weight') }}" placeholder="現在の体重を入力">kg
+                </div>
+                <div class="error-message">
                     @foreach ($errors->get('weight') as $message)
                     <p class="register-form__error-message">{{ $message }}</p>
                     @endforeach
@@ -34,6 +36,8 @@
                 <div class="register-form__weight">
                     <label class="register-form__label" for="target_weight">目標の体重</label>
                     <input type="text" id="target_weight" name="target_weight" class="register-form__input" value="{{ old('target_weight') }}" placeholder="目標の体重を入力">kg
+                </div>
+                <div class="error-message">
                     @foreach ($errors->get('target_weight') as $message)
                     <p class="register-form__error-message">{{ $message }}</p>
                     @endforeach
