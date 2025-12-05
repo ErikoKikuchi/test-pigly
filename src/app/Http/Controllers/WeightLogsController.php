@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\RegisterStep2Request;
+use App\Http\Requests\GoalSettingRequest;
 use App\Http\Requests\WeightCreateRequest;
 use App\Http\Requests\WeightDetailRequest;
 use App\Http\Requests\LoginRequest;
@@ -15,24 +15,27 @@ class WeightLogsController extends Controller
 {
     public function index()
     {
-            //認証に成功した場合の処理
-            $userId=Auth::id();
-            $weight_data=WeightLog::where('user_id',$userId)->paginate(8)->WithQuerystring();
-            $weight_target=WeightTarget::where('user_id',$userId)->first('target_weight');
-            $weight_difference=$weight_data->last()->weight - $weight_target->target_weight;
-            $weight_latest=$weight_data->last()->weight;
+        //認証に成功した場合の処理
+        $userId=Auth::id();
+        $weight_data=WeightLog::where('user_id',$userId)->paginate(8)->WithQuerystring();
+        $weight_target = WeightTarget::where('user_id', $userId)->first('target_weight');
+        $latest_weight = WeightLog::where('user_id', $userId)
+            ->latest('date')->first();
+        if ($weight_target && $latest_weight) {
+            $weight_difference = $latest_weight->weight - $weight_target->target_weight;
+        }
             return view('weight_logs')->with(['weight_data'=>$weight_data,'weight_target'=>$weight_target,'weight_difference'=>$weight_difference,
-            'weight_latest'=>$weight_latest]);
+            'latest_weight'=>$latest_weight]);
         }
     public function show()
     {
         return view('goal_setting');
     }
-    public function save(RegisterStep2Request $request)
+    public function save(GoalSettingRequest $request)
     {
         $weight_update=$request->validated();
         $user_id=auth()->id();
-        WeightTarget::update(
+        WeightTarget::updateOrCreate(
             ['user_id'=>$user_id],
             ['target_weight'=>$weight_update['target_weight']]
         );
@@ -48,8 +51,10 @@ class WeightLogsController extends Controller
             -> paginate(8)->WithQuerystring();
         $weight_counts= $weight_data->count();
         $weight_target = WeightTarget::where('user_id', $userId)->first('target_weight');
-        $weight_difference = $weight_data->last()->weight - $weight_target->target_weight;
-        $weight_latest = $weight_data->last()->weight;
+        $latest_weight = WeightLog::where('user_id', $userId)
+            ->latest('date')->first();
+        if ($weight_target && $latest_weight) {
+        $weight_difference = $latest_weight->weight - $weight_target->target_weight;}
         return view('weight_logs')->with([
             'weight_data'=>$weight_data,
             'date_from'=>$date_from,
@@ -57,7 +62,7 @@ class WeightLogsController extends Controller
             'weight_counts'=> $weight_counts,
             'weight_target' => $weight_target,
             'weight_difference' => $weight_difference,
-            'weight_latest' => $weight_latest
+            'latest_weight' => $latest_weight
         ]);
     }
     public function create()

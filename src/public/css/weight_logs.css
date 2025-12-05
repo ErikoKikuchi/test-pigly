@@ -90,11 +90,11 @@ svg.w-5.h-5 {     /*paginateメソッドの矢印の大きさ調整のために�
     gap: 20px;
 }
 .date-search{
-    height: 30px;
+    height: 40px;
     padding:10px 20px;
 }
 .search-button{
-    height: 30px;
+    height: 40px;
     width:20%;
     background-color: gray;
     color:white;
@@ -112,12 +112,12 @@ svg.w-5.h-5 {     /*paginateメソッドの矢印の大きさ調整のために�
 .close__search-item{
     border:1px solid gray;
     border-radius: 10px;
-    height:30px;
+    height:40px;
     display: flex;
     align-items: center;
-    padding: 5px;
+    padding: 5px 15px;
 }
-.create-Button{
+.create-button{
     background: linear-gradient(270deg, #fd89b0, #878ef3);
     color: white;
     border: none;
@@ -142,7 +142,7 @@ svg.w-5.h-5 {     /*paginateメソッドの矢印の大きさ調整のために�
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    width: 400px;
+    width: 500px;
 }
 .modal-content__label-wrapper{
     display: flex;

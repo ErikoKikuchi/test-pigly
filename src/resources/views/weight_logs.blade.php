@@ -42,7 +42,7 @@
             <p class="weight-goal__label">最新体重</p>
             <div class="weight-goal__inner">
                 <span class="weight-goal__contents">
-                    {{$weight_latest}}
+                    {{$latest_weight->weight}}
                 </span>
                 <p class="weight-unit">kg</p>
             </div>
@@ -83,7 +83,7 @@
                                 <label class="modal-content__label" for="date">日付</label>
                                     <p class="modal-content__alert">必須</p>
                             </div>
-                            <input class="modal-content__input" type="text" id="date" name="date" value="{{\Carbon\Carbon::today()->format('Y-m-d')}}">
+                            <input class="modal-content__input" type="text" id="date" name="date" value="{{\Carbon\Carbon::today()->format('Y/m/d')}}">
                         </div>
                         <div class="error-message">
                             @foreach ($errors->get('date') as $message)

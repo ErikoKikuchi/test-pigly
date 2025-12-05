@@ -1,4 +1,92 @@
+.weight_detail{
+    background-color: rgb(249, 249, 249);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.weight_detail-content{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 70%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.weight_detail-title{
+    margin: 20px;
+}
+.weight-detail__form{
+    display: flex;
+    flex-direction: column;
+    margin:20px;
+}
+.weight_detail-content__date,
+.weight_detail-content__weight,
+.weight_detail-content__calories,
+.weight_detail-content__exercise-time{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+}
+.input__wrapper{
+    width:100%;
+    display: flex;
+    align-items: center;
+}
+.weight_detail-content__input{
+    width: 93%;
+    height:40px;
+    margin: 10px 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+.weight_detail-content__textarea{
+    width: 93%;
+    height: 80px;
+    margin: 10px 10px 20px;
+    display: flex;
+    justify-content: center;
+}
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.back-button {
+    display: flex;
+    background-color: gainsboro;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.update-button {
+    background: linear-gradient(270deg, #fd89b0, #878ef3);
+    color: white;
+    border: none;
+    height: 40px;
+    width: 20%;
+    border-radius: 10px;
+}
+.delete-button{
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
 .delete-icon {
     width: 25px;
     height: 25px;
+}
+.error-message{
+    margin-right:10px;
+}
+.weight_detail-form__error-message{
+    color: red;
 }

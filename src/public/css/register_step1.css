@@ -6,41 +6,33 @@
     align-items: center;
     justify-content: center;
 }
-
 .register-form {
     background-color: white;
     border-radius: 10px;
     width: 500px;
 }
-
 .register-form__top {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 h1 {
     margin: 30px auto 10px;
 }
-
 h2 {
     margin: 0px auto 10px;
 }
-
 .register-form__title {
     color: rgb(237, 142, 240);
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 40px;
 }
-
 .register-form__subtitle {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 .register-form__contents {
     margin: 0px 20px;
 }
-
 .register-form__name,
 .register-form__email,
 .register-form__password {
@@ -48,21 +40,17 @@ h2 {
     flex-direction: column;
     margin: 20px auto 0px;
 }
-
 .register-form__label {
     margin: 10px 0px;
     font-weight: bold;
 }
-
 .register-form__input {
     height: 40px;
     width: 100%;
 }
-
 .register-form__bottom {
     display: flex;
 }
-
 .register-form__button {
     background: linear-gradient(270deg, #fd89b0, #878ef3);
     color: white;
@@ -72,21 +60,17 @@ h2 {
     border-radius: 10px;
     margin: 30px auto 20px;
 }
-
 .move-to-login {
     margin: 10px auto 20px;
     display: flex;
 }
-
 .login__button {
     margin: 10px auto 20px;
 }
-
 .error-message {
     margin: 0px auto;
     display: flex;
 }
-
 .register-form__error-message {
     color: red;
 }
