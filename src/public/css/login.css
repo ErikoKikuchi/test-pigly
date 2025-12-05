@@ -1,0 +1,87 @@
+.message {
+    background: rgb(255, 187, 0);
+    text-align: center;
+    justify-content: center;
+    height: 40px;
+}
+.success-message__text {
+    color: rgb(255, 0, 221);
+}
+.error-message__text {
+    color: red;
+}
+.background-image {
+    width: 100%;
+    height: 900px;
+    background: linear-gradient(135deg, #fd89b0, #f4d7f6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-form {
+    background-color: white;
+    border-radius: 10px;
+    width: 500px;
+}
+.login-form__top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    margin: 30px auto 10px;
+}
+h2 {
+    margin: 0px auto 20px;
+}
+.login-form__title {
+    color: rgb(237, 142, 240);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+}
+.login-form__subtitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.login-form__contents {
+    margin: 0px 20px;
+}
+.login-form__email,
+.login-form__password {
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto 0px;
+}
+.login-form__label {
+    margin: 10px 0px;
+    font-weight: bold;
+}
+.login-form__input {
+    height: 40px;
+    width: 100%;
+}
+.login-form__bottom {
+    display: flex;
+}
+.login-form__button {
+    background: linear-gradient(270deg, #fd89b0, #878ef3);
+    color: white;
+    border: none;
+    height: 40px;
+    width: 60%;
+    border-radius: 10px;
+    margin: 30px auto 20px;
+}
+.move-to-register {
+    margin: 10px auto 20px;
+    display: flex;
+}
+.register__button {
+    margin: 10px auto 20px;
+}
+.error-message {
+    margin: 0px auto;
+    display: flex;
+}
+.login-form__error-message {
+    color: red;
+}

@@ -1,4 +1,45 @@
-.header-link-icon{
+.header{
+    margin:10px;
+}
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+.header-logo {
+    color: rgb(237, 142, 240);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 32px;
+}
+h1{
+    margin:0px;
+}
+.header-link{
+    display: flex;
+}
+.header-link__group{
+    background-color: rgb(239, 239, 239);
+    border:1px solid rgb(133, 132, 132);
+    margin: 0px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.header-link-item{
+    display: flex;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color:black;
+}
+.header-link-icon {
     width: 25px;
     height: 25px;
+}
+.logout-button{
+    border: none;
+}
+form{
+    margin: 0px;
 }

@@ -18,14 +18,12 @@
             <div class="header-link">
                 @if(Auth::check())
                 <div class="header-link__group">
-                    <img src="{{ asset('設定アイコン.png') }}" alt=" " class="header-link-icon" />
-                    <a href="{{ route('goal_setting') }}" class="header-link-item">目標体重設定</a>
+                    <a href="{{ route('goal_setting') }}" class="header-link-item"><img src="{{ asset('設定アイコン.png') }}" alt=" " class="header-link-icon" />目標体重設定</a>
                 </div>
                 <div class="header-link__group">
                     <form class="header-link-item" action="/logout" method="post">
                         @csrf
-                        <img src="{{asset('2512730.png')}}" alt=" " class="header-link-icon">
-                        <button type="submit" class="logout-button">ログアウト</button>
+                        <button type="submit" class="logout-button"><img src="{{asset('2512730.png')}}" alt=" " class="header-link-icon">ログアウト</button>
                     </form>
                 </div>
                 @endif

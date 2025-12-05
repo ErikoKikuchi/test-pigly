@@ -24,6 +24,7 @@ Route::middleware('guest')->group(function () {
         return view('auth.register_step2');});
     Route::post('/register/step2', [RegisterController::class, 'store']);
     Route::get('/login', function () {return view('auth.login');})->name('login');
+    Route::post('/login', [WeightLogsController::class, 'login']);
 });
 
 Route::middleware('auth')->group(function () {

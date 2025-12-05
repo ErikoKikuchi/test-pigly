@@ -7,6 +7,124 @@ svg.w-5.h-5 {     /*paginateメソッドの矢印の大きさ調整のために�
     width: 25px;
     height: 25px;
 }
+.weight-data{
+    background-color:rgb(249, 249, 249);
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.success-message {
+    background: rgb(255, 187, 0);
+    text-align: center;
+    justify-content: center;
+    height: 40px;
+}
+.success-message__text {
+    color: rgb(255, 0, 221);
+}
+.weight-management{
+    display: flex;
+    gap:20px;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 10px;
+    width:80%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.weight-goal,
+.weight-latest{
+    padding-left:20px;
+    flex:1;
+}
+.weight-gap{
+    border-left: 1px solid rgb(156, 156, 156);
+    border-right: 1px solid rgb(156, 156, 156);
+    flex:1;
+    padding-left: 20px;
+}
+.weight-goal__inner,
+.weight-gap__inner,
+.weight-latest__inner {
+    display: flex;
+    align-items: center;
+}
+.weight-gap__contents{
+    display: flex;
+    align-items: center;
+}
+.weight-goal__contents,
+.weight-gap--over,
+.weight-gap--under,
+.weight-gap--achieved{
+    font-size: 32px;
+    font-weight: bold;
+    margin:0px;
+}
+.weight-record{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #fff;
+    align-items: center;
+    border-radius: 10px;
+    width: 80%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.weight-record__top-wrapper{
+    width:100%;
+    display: flex;
+    align-items: center;
+}
+.weight-record__top{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+}
+.search-form{
+    display: flex;
+    gap: 20px;
+}
+.date-search{
+    height: 30px;
+    padding:10px 20px;
+}
+.search-button{
+    height: 30px;
+    width:20%;
+    background-color: gray;
+    color:white;
+    border: none;
+    border-radius: 5px;
+}
+.search-term__wrapper{
+    display: flex;
+    align-items: center;
+    gap:20px;
+}
+.search-term{
+    display: flex;
+}
+.close__search-item{
+    border:1px solid gray;
+    border-radius: 10px;
+    height:30px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
+.create-Button{
+    background: linear-gradient(270deg, #fd89b0, #878ef3);
+    color: white;
+    border: none;
+    height: 40px;
+    width: 20%;
+    border-radius: 10px;
+}
 .modal {
     display: none;
     /* 初期は非表示 */
@@ -20,18 +138,101 @@ svg.w-5.h-5 {     /*paginateメソッドの矢印の大きさ調整のために�
     align-items: center;
     z-index: 1000;
 }
-
 .modal-content {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     width: 400px;
 }
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+.modal-content__label-wrapper{
+    display: flex;
+    align-items: center;
+    gap:10px;
+}
+.modal-content__alert{
+    background-color: red;
+    color:white;
+}
+.modal-content__input{
+    height:40px;
+    width:90%;
+}
+.create-form__error-message{
+    color: red;
+}
+.modal-content__exercise-content{
+    margin-top:10px;
+}
+.modal-content__input-textarea{
+    width:100%;
+    height:80px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.button-group{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.back-button{
+    display: flex;
+    background-color: gainsboro;
+    width:20%;
+    height:40px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
     cursor: pointer;
+}
+.weight-record__contents{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.weight-record__inner{
+    width:90%;
+    table-layout: fixed;
+    margin:0px 20px;
+}
+.weight-record__row--header{
+    border-bottom: 1px solid #fd89f7a4;
+}
+.weight-record__row:hover{
+    width: 100%;
+    height:40px;
+    table-layout: fixed;
+    background-color: rgba(240, 0, 248, 0.418);
+    padding:5px;
+}
+.weight-record__inner th:nth-child(1),
+.weight-record__inner td:nth-child(1) {
+    width: 25%;
+    padding:5px;
+}
+.weight-record__inner th:nth-child(2),
+.weight-record__inner td:nth-child(2) {
+    width: 15%;
+    padding: 5px;
+}
+.weight-record__inner th:nth-child(3),
+.weight-record__inner td:nth-child(3) {
+    width: 30%;
+    padding: 5px;
+}
+.weight-record__inner th:nth-child(4),
+.weight-record__inner td:nth-child(4) {
+    width: 20%;
+    padding: 5px;
+}
+.weight-record__inner th:nth-child(5),
+.weight-record__inner td:nth-child(5) {
+    width: 10%;
+    padding: 5px;
+}
+.weight-record__item{
+    text-align: center;
 }

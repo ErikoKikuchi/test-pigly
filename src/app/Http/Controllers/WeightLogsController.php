@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\RegisterStep2Request;
 use App\Http\Requests\WeightCreateRequest;
 use App\Http\Requests\WeightDetailRequest;
+use App\Http\Requests\LoginRequest;
 use Illuminate\Http\Request;
 use App\Models\WeightTarget;
 use App\Models\WeightLog;
@@ -95,5 +96,15 @@ class WeightLogsController extends Controller
     public function destroy($weightLogId){
         WeightLog::find($weightLogId)->delete();
         return redirect('/weight_logs');
+    }
+    public function login(LoginRequest $request){
+        $credentials=$request->validated();
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->intended('/weight_logs');
+        }
+        return back()
+        ->withErrors(['email' => 'メールアドレスまたはパスワードが正しくありません。'])
+        ->onlyInput('email');
     }
 }
